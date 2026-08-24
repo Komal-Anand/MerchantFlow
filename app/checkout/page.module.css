@@ -1,0 +1,767 @@
+.page {
+  min-height: 100vh;
+  padding: 120px 24px 64px;
+  background-color: #0b0f19; /* Deep premium dark blue/black */
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  text-decoration: none;
+}
+
+.backBtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.backBtn:hover {
+  opacity: 0.8;
+}
+
+.errorAlert {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.errorAlert svg {
+  width: 20px;
+  height: 20px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Base Card Styling */
+.card, .summaryCard, .payActionCard, .trustCard {
+  background: #111827; /* Dark card background */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stepIndicator {
+  width: 28px;
+  height: 28px;
+  background: #3b82f6;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.cardSubtitle {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+/* Form Styles */
+.formSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formGroupRow {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.formGroupFull {
+  flex: 1;
+}
+
+.formRow {
+  display: flex;
+  gap: 20px;
+}
+
+.formRow > * {
+  flex: 1;
+}
+
+.addressGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.formGroup, .formGroupFull {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroup label, .formGroupFull label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #d1d5db;
+}
+
+.formGroup label span, .formGroupFull label span {
+  color: #ef4444;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 16px;
+  width: 18px;
+  height: 18px;
+  color: #6b7280;
+  pointer-events: none;
+}
+
+.inputWrapper input {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  background: #0b0f19; /* Darker inner input */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.inputWrapper input::placeholder {
+  color: #4b5563;
+}
+
+.inputWrapper input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+}
+
+.inputWrapper input:focus + .inputIcon {
+  color: #3b82f6;
+}
+
+/* Payment Selector Layout */
+.paymentSelector {
+  display: flex;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.paymentTabs {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  background: #0f1422;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.paymentTab {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  border-left: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.paymentTab:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.paymentTab.activeTab {
+  background: rgba(59, 130, 246, 0.05);
+  border-left: 2px solid #3b82f6;
+}
+
+.tabIcon {
+  width: 18px;
+  height: 18px;
+  color: #9ca3af;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.activeTab .tabIcon {
+  color: #3b82f6;
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tabTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.activeTab .tabTitle {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.tabDesc {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.paymentContent {
+  flex: 1;
+  background: #111827;
+  padding: 24px;
+}
+
+/* UPI View Specifics */
+.upiView {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.viewTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.viewSubtitle {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 24px;
+}
+
+.upiApps {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.upiApp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.upiAppCircle {
+  width: 48px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: #111827;
+}
+
+.upiApp span {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.upiDivider {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+}
+.upiDivider span {
+  background: #111827;
+  padding: 0 10px;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.qrSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qrBox {
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  width: 160px;
+  height: 160px;
+}
+
+.qrImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.upiIdDisplay {
+  font-size: 12px;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.upiIdDisplay svg {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.placeholderView {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.placeholderBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  color: #6b7280;
+  max-width: 200px;
+}
+
+.placeholderBox svg {
+  width: 32px;
+  height: 32px;
+  color: #4b5563;
+}
+
+.placeholderBox p {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.demoModeBadge {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(245, 158, 11, 0.05);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: #f59e0b;
+  margin-bottom: 24px;
+}
+
+.demoIcon {
+  margin-top: 2px;
+}
+.demoIcon svg {
+  width: 18px;
+  height: 18px;
+}
+.demoModeBadge strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+.demoModeBadge p {
+  font-size: 12px;
+  margin: 0;
+  color: #d1d5db;
+}
+
+/* Order Summary */
+.summarySidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: sticky;
+  top: 100px;
+}
+
+.summaryCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.summaryIcon {
+  width: 20px;
+  height: 20px;
+  color: #10b981; /* Green cart icon like reference */
+}
+
+.summaryItems {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.summaryItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.summaryItemImageWrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  background: #0b0f19;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.summaryItemImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.summaryItemImagePlaceholder {
+  width: 24px;
+  height: 24px;
+  background: #374151;
+  border-radius: 4px;
+}
+
+.summaryItemDetails {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.summaryItemName {
+  font-size: 14px;
+  color: #f3f4f6;
+  font-weight: 500;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.summaryItemQty {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.summaryItemPrice {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.summaryList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #e5e7eb;
+}
+
+.summaryRowDiscount {
+  color: #10b981;
+}
+
+.summaryDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 20px 0;
+}
+
+.summaryTotalBlock {
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.summaryTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.summaryTotalLabels {
+  display: flex;
+  flex-direction: column;
+}
+
+.taxInfo {
+  font-size: 11px;
+  color: #9ca3af;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.savingsBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 16px;
+}
+.savingsBox svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Pay Button Card */
+.payActionCard {
+  padding: 24px;
+}
+
+.checkoutBtn {
+  width: 100%;
+  padding: 16px;
+  background: #3b82f6; 
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.2s, opacity 0.2s, box-shadow 0.2s;
+  margin-bottom: 20px;
+}
+
+.checkoutBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.checkoutBtn:hover:not(:disabled) {
+  opacity: 0.95;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+}
+
+.checkoutBtn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.checkoutBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.secureIndicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #9ca3af;
+}
+
+.secureIndicator svg {
+  width: 18px;
+  height: 18px;
+  color: #eab308; /* Yellow lock */
+  flex-shrink: 0;
+}
+
+.secureText {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.secureText strong {
+  font-size: 13px;
+  color: #d1d5db;
+  margin-bottom: 2px;
+}
+
+.secureText span {
+  font-size: 11px;
+}
+
+/* Trust Section */
+.trustCard {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trustIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.trustText {
+  display: flex;
+  flex-direction: column;
+}
+
+.trustText strong {
+  font-size: 12px;
+  color: #e5e7eb;
+}
+
+.trustText span {
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .summarySidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .formRow, .addressGrid {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .paymentSelector {
+    flex-direction: column;
+  }
+  
+  .paymentTabs {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  
+  .paymentTab {
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    padding: 12px 16px;
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .paymentTab.activeTab {
+    border-left: none;
+    border-bottom: 2px solid #3b82f6;
+  }
+  
+  .tabContent {
+    display: none; /* Hide text on mobile tabs */
+  }
+  
+  .trustCard {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}

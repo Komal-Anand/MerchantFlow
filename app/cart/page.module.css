@@ -1,0 +1,209 @@
+/* ============================================================
+   Cart Page — MerchantFlow
+   ============================================================ */
+
+.page {
+  min-height: 100vh;
+  padding-top: var(--nav-height);
+  background-color: var(--color-bg);
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-8) var(--content-pad) var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-4);
+}
+
+.title {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.03em;
+}
+
+.itemCount {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+}
+
+/* ── Empty State ── */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  padding: var(--space-20) var(--space-6);
+  text-align: center;
+  background-color: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  margin-top: var(--space-4);
+}
+
+.emptyIcon {
+  width: 64px;
+  height: 64px;
+  color: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+.emptyTitle {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.emptySubtitle {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  max-width: 360px;
+}
+
+.continueShoppingBtn {
+  margin-top: var(--space-2);
+  padding: var(--space-3) var(--space-8);
+  background-color: var(--color-accent);
+  color: #fff;
+  font-size: var(--text-base);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.continueShoppingBtn:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+/* ── Main Layout (Cart Items + Summary) ── */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr 340px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr 380px;
+    gap: var(--space-12);
+  }
+}
+
+/* ── Items List ── */
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ── Order Summary ── */
+.summary {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-8));
+}
+
+.summaryTitle {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.summaryList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.summaryRowDiscount {
+  color: #10b981;
+}
+
+.summaryDivider {
+  height: 1px;
+  background-color: var(--color-border);
+  margin: var(--space-1) 0;
+}
+
+.summaryTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.checkoutBtn {
+  width: 100%;
+  padding: var(--space-4);
+  background-color: var(--color-text-primary);
+  color: var(--color-bg);
+  font-size: var(--text-base);
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.checkoutBtn:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.checkoutBtn:active {
+  transform: translateY(0);
+}
+
+.secureIcon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.8;
+}
+
+.checkoutNote {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.5;
+}

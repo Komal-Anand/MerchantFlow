@@ -1,0 +1,247 @@
+.page {
+  min-height: 100vh;
+  padding: 120px 24px 64px;
+  background-color: var(--bg-primary);
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  width: 100%;
+  max-width: 800px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.orderCount {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  text-align: center;
+  background: var(--bg-secondary);
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+}
+
+.emptyIcon {
+  width: 64px;
+  height: 64px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.emptyTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.emptySubtitle {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 400px;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+.continueShoppingBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 99px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.continueShoppingBtn:hover {
+  opacity: 0.9;
+}
+
+.orderList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.orderCard {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.orderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 24px;
+  background: rgba(0,0,0,0.02);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.orderMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.orderId {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+.orderDate {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.orderStatusContainer {
+  display: flex;
+  gap: 8px;
+}
+
+.statusBadge {
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statusBadge.paid {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.statusBadge.failed {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.statusBadge.processing {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.orderItems {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.orderItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.itemImagePlaceholder {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+}
+
+.itemImagePlaceholder svg {
+  width: 24px;
+  height: 24px;
+}
+
+.itemDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.itemName {
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+.itemQty {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.itemPrice {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+.orderFooter {
+  padding: 20px 24px;
+  border-top: 1px solid var(--border-color);
+  background: rgba(0,0,0,0.01);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.customerDetails p {
+  margin: 0 0 4px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.customerDetails p strong {
+  color: var(--text-primary);
+}
+
+.orderTotal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.orderTotal span:first-child {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.totalAmount {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
