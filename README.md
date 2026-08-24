@@ -3,22 +3,80 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ## Getting Started
 
 First, run the development server:
+# MerchantFlow
+
+### Connect intent. Drive growth.
+
+MerchantFlow is an AI-powered commerce experience that helps shoppers discover relevant products, make confident decisions, and complete checkout in one focused flow.
+
+## Live Demo
+
+Visit the deployed app: **[merchant-flow-woad.vercel.app](https://merchant-flow-woad.vercel.app)**
+
+## Highlights
+
+- AI shopping assistant for natural-language product discovery
+- Product catalog with category browsing, search, and recommendations
+- Product details modal with quick-add cart actions
+- Cart and checkout experience with Razorpay integration support
+- Orders and order confirmation views
+- Growth intelligence dashboard with KPIs, revenue charts, customer intent, and cross-sell insights
+- Responsive interface for desktop and mobile screens
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) 16 with the App Router
+- React 19
+- CSS Modules and a shared design system
+- Gemini API for AI recommendations
+- Razorpay API for payment order creation and verification
+- Vercel for deployment
+
+## Run Locally
+
+Requirements: Node.js 18 or newer.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+	npm install
+	npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file in the project root. The AI and payment integrations are optional during development.
+
+```env
+GEMINI_API_KEY=your_gemini_api_key
+RAZORPAY_KEY_ID=your_razorpay_key_id
+RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+```
+
+Keep `.env.local` private. It is excluded from Git by `.gitignore` and should never be committed or added to a public repository.
+
+Without `GEMINI_API_KEY`, the assistant uses the local catalog search fallback. Without Razorpay keys, checkout remains in demo mode.
+
+## Project Structure
+
+```text
+app/          Pages and API routes
+components/   Shared UI components
+context/      Cart state management
+lib/          Product data and assistant logic
+public/       Static assets and product images
+```
+
+## Production Build
+
+```bash
+	npm run build
+	npm run start
+```
+
+## Repository
+
+[github.com/Komal-Anand/MerchantFlow](https://github.com/Komal-Anand/MerchantFlow)
 
 ## Learn More
 
